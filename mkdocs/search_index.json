@@ -1,0 +1,214 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Kavenegar Webservice\n\n\nKavenegar\n RESTful API Document\n\n\nIf you need to future information about API document Please visit RESTful Document\n\n\nFirst of all, You need to make an account on Kavenegar from \nKaveneagr webpage\n\n\nAfter that you just need to pick API-KEY up from \nMy Account\n section.\n\n\nHere You can download the \nJava SDK\n or just pull it.\n\n\nAnyway there is good tutorial about \nPull  request\n\n\n\n\nDotnet SDK\n\n\nInstallation\n\n\nFor installing just follow these steps:\n\n\nFisrt Method :\n\n\n\n\n\n\nIf you have nuget you can go to next part but if you don't have it you can download and install it \nhere\n\n\n\n\n\n\nFrom tools section  Library Package Manager  select Package Manager Console .\n\n\n\n\n\n\nexecute \nInstall-Package Kavenegar\n in the console.\n\n\n\n\n\n\nNow  \nKavenegar.dll\n package is acessable in Solution explorer\n\n\n\n\n\n\nSecond method\n\n\n\n\nManually  \nHere \n Downlaod SDk \n\n\n\n\n Download SDk \n\n\n Dowload sample code \n\n\n\n\nUsage\n\n\n\n\nFrom  Solution explorer \nright click\n on  References and form new menu select  \nAdd Reference\nthen choose  \nKavenegar.dll\n .\n\n\n\n\nWell, There is an example to Send SMS by C#.\n\n\n\ntry\n{\n    Kavenegar.KavenegarApi api = new Kavenegar.KavenegarApi(\nYour Api Key\n);\n    var result = api.Send(\nSenderLine\n, \nYour Receptor\n, \nKaveh specialized Web service\n);\n    foreach (var r in result){\n      Console.Write(\nr.Messageid.ToString()\n);\n  }\n}\ncatch (Kavenegar.Exceptions.ApiException ex) \n{\n    //In case that error throw 200 \n    Console.Write(\nMessage : \n + ex.Message);\n}\ncatch (Kavenegar.Exceptions.HttpException ex) \n{\n//in case that there is any problem to connect to webservie  this error thow\n    Console.Write(\nMessage : \n + ex.Message);\n}\n\n\n\n\n\nNode\n\n\nInstallation\n\n\nFor installing Kavenegar vai Npm use this command  \n\n\nnpm install kavenegar \n\n\n\n\nIf you don't have npm you can easily install it from  \nnpm website\n\n\nUsage\n\n\nWell, There is two  example to Send SMS by node below.\n\n\n\nvar Kavenegar = require('kavenegar');\nvar api = Kavenegar.KavenegarApi({\n    apikey: ''\n});\napi.Send({\n        message: \nKaveh specialized Web service  \n,\n        sender: \n10004346\n,\n        receptor: \n{Your API Key}\n\n    },\n    function(response, status) {\n        console.log(response);\n        console.log(status);\n    });\n\n\n\n\n\n\nvar Kavenegar = require('kavenegar');\nvar api = Kavenegar.KavenegarApi({\n    apikey: '{Your API Key}'\n});\napi.VerifyLookup({\n    receptor: \n{Your Phone Number} \n,\n    token: \n852596\n,\n    template: \nregisterverify\n\n}, function(response, status) {\n    console.log(response);\n    console.log(status);\n});\n\n\n\n\n\n\n\nJava\n\n\nInstallation\n\n\nTo get a Git project into your build:\n\n\nAdd it depend on what you are using :\n\n\ngradle\n\n\nStep 1 :  Add the JitPack repository to your build file\n\n\nallprojects {\n        repositories {\n            ...\n            maven { url 'https://jitpack.io' }\n        }\n    }\n\n\n\n\nStep 2 : Add the dependency \n\n\ndependencies {\n        compile 'com.github.User:Repo:Tag'\n    }\n\n\n\n\nmaven\n\n\nStep 1 : Add the JitPack repository to your build file \n\n\nrepositories\n\n        \nrepository\n\n            \nid\njitpack.io\n/id\n\n            \nurl\nhttps://jitpack.io\n/url\n\n        \n/repository\n\n    \n/repositories\n\n\n\n\n\nStep 2 : Add the dependency\n\n\ndependency\n\n        \ngroupId\ncom.github.User\n/groupId\n\n        \nartifactId\nRepo\n/artifactId\n\n        \nversion\nTag\n/version\n\n    \n/dependency\n\n\n\n\n\nsbt\n\n\nStep 1 \n Add the JitPack repository to your build file \n\n\n    resolvers += \njitpack\n at \nhttps://jitpack.io\n\n\n\n\n\n\nStep 2\nAdd the dependency\n\n\n    libraryDependencies += \ncom.github.User\n % \nRepo\n % \nTag\n\n\n\n\n\n\nleiningen\n\n\nStep 1 \n Add the JitPack repository to your build file \n\n\n    :repositories [[\njitpack\n \nhttps://jitpack.io\n]]\n\n    }\n\n\n\n\nStep 2\nAdd the dependency\n\n\n    :dependencies [[com.github.User/Repo \nTag\n]]\n\n\n\n\n\nUsage\n\n\nWell,You can see an example of sending SMS through JAVA below . \n\n\n\ntry {\n     KavenegarApi  api= new KavenegarApi(\n);\n      SendResult Result = api.Send(\nSenderLine\n, \nYour Receptor\n, \nKaveh specialized Web service \n);\n}\ncatch (HttpException ex)\n{//In case that error throw 200 \n\n  System.out.print(\nHttpException  : \n + ex.getMessage());\n}\ncatch (ApiException ex)\n{ //in case that there is any problem to connect to webservie  this error thow\n\n   System.out.print(\nApiException : \n + ex.getMessage());\n}\n\n\n\n\n\n\n\nPHP\n\n\nInstallation\n\n\nUse in these ways : \n\n\ncomposer require kavenegar/php\n\n\n\n\nor add\n\n\nkavenegar/php\n: \n*\n\n\n\n\n\nAnd run following command to download extension using \ncomposer\n \n\n\n$ composer update\n\n\n\n\nUsage\n\n\nWell, There is an example to Send SMS by PHP.\n\n\nrequire __DIR__ . '/vendor/autoload.php';\n\ntry{\n    $api = new \\Kavenegar\\KavenegarApi({ \n{API Key}\n });\n    $sender = \n10004346\n;\n    $message = \nKaveh specialized Web service  \n;\n    $receptor = array(\n{Your Phone Number}\n);\n    $result = $api-\nSend($sender,$receptor,$message);\n    if($result){\n        foreach($result as $r){\n            echo \nmessageid = $r-\nmessageid\n;\n            echo \nmessage = $r-\nmessage\n;\n            echo \nstatus = $r-\nstatus\n;\n            echo \nstatustext = $r-\nstatustext\n;\n            echo \nsender = $r-\nsender\n;\n            echo \nreceptor = $r-\nreceptor\n;\n            echo \ndate = $r-\ndate\n;\n            echo \ncost = $r-\ncost\n;\n        }       \n    }\n}\ncatch(\\Kavenegar\\Exceptions\\ApiException $e){\n//In case that error throw 200 \n    echo $e-\nerrorMessage();\n}\ncatch(\\Kavenegar\\Exceptions\\HttpException $e){\n//in case that there is any problem to connect to webservie  this error thow\n    echo $e-\nerrorMessage();\n}\n\n\n\n\n\n\n\n\nPython\n\n\nInstallation\n\n\nUsage\n\n\nWell, There is an example to Send SMS by Python below.\n\n\n#!/usr/bin/env python\nfrom kavenegar import *\ntry:\n    import json\nexcept ImportError:\n    import simplejson as json\n\ntry:\n    api = KavenegarAPI('{Your APIKey}')\n    params = {\n        'sender': '10004346',\n        'receptor': '{Your Phone Number}',\n        'message': 'Kaveh specialized Web service '\n    }   \n    response = api.sms_send(params)\n    print str(response)\nexcept APIException,e: \n    print str(e)\nexcept HTTPException,e: \n    print str(e)\n\n\n\n\n\n\n\ngo \n\n\nInstall it  in this way \n\n\ngo get github.com/negah/kavenegar\n\n\n\n\nUsage\n\n\nWell, There is an example to Send SMS by go below.\n\n\npackage main\n\nimport (\n  \ngithub.com/negah/kavenegar\n\n  \nlog\n\n  \nfmt\n\n)\n\nfunc main(){\n  // Setup new Client\n  // kavenegar.SMS(api_key, sender)\n  // sender is your dedicate phone_number in kavenagar. if you dont have one, left it blank but pass \n\n  sms := kavenegar.NewSMS(\napi_key\n,\n{Your APi Key}\n)\n\n  // Send sms\n  status, err := sms.Send(\n{Your Phone Number} \n, \nHello my friend \n)\n\n  if err != nil {\n    log.Printf(\nResponse status code: %d\n, status)\n    log.Fatal(err)\n  } else {\n    fmt.Printf(\nSMS sent successfully.\n)\n  }\n}\n\n\n\n\n\n\n\nRuby\n\n\nInstallation\n\n\nUsage\n\n\nAdd this line to your application's Gemfile:\n\n\ngem 'kave'\n\n\n\n\nAnd then execute:\n\n\n$ bundle install\n\n\n\n\nOr install it yourself(localy) as:\n\n\n$ gem install kave\n\n\n\n\nAnd create init file on config directory(kave.rb):\n\n\nKave.configure do |config|\n  config.wsdl ='http://api.kavenegar.com/soap/v1.asmx?WSDL'\n  config.sender  = 'number'\n\n\n\n\nWell, There is an example to Send SMS by Ruby.\n\n\n request=Kave::SendRequestSimple.new({\n\n    message: '\u0633\u0644\u0627\u0645 \u0639\u0632\u06cc\u0632 :)',\n    mobile: 'Your Phone Number ',\n    #optional\n    unixdate: by default 0 ,\n    msgmode: by default 1\n})\n\nres=request.call\nrender :text=\n{status_message_only_farsi: res.statusmessage,status_code: res.status}\n\n\n\n\n\n\nElixir\n\n\n\n\nInstallation\n\n\nIf \navailable in Hex\n, the package can be installed as:\n\n\n\n\n\n\nAdd kavenegar to your list of dependencies in \nmix.exs\n:\n\n\ndef deps do\n  [{:kavenegar, \"~\n 0.0.1\"}]\nend\n\n\n\n\n\n\n\nEnsure kavenegar is started before your application:\n\n\ndef application do\n  [applications: [:kavenegar]]\nend\n\n\n\n\n\n\n\nUsage\n\n\nWell, There is an example to Send SMS by Elixir.\n\n\nKavenegar.send %{receptor: '{Your Phone Number}', message: \nthis is a sample text\n}\n\n\n\n\nwill return:\n\n\n%{\nentries\n =\n [%{\ncost\n =\n 130, \ndate\n =\n 1466091791,\n     \nmessage\n =\n \nthis is a sample text\n, \nmessageid\n =\n 999999999,\n     \nreceptor\n =\n \n{Your Phone Number}\n, \nsender\n =\n \n10001000010000\n, \nstatus\n =\n 1,\n     \nstatustext\n =\n \nIn sending list\n}],\n  \nreturn\n =\n %{\nmessage\n =\n \nConfirm\n, \nstatus\n =\n 200}}\n\n\n\n\n\n\nLaravel\n\n\n\n\nRequirements\n\n\nLaravel 4 or 5.\n\n\nInstallation\n\n\nInstall it this way : \n\n\ncomposer require kavenegar/laravel\n\n\n\n\nLaravel 5\n\n\nAdd the \nKavenegar\\Laravel\\ServiceProvider\n provider to the \nproviders\n array in \nconfig/app.php\n:\n\n\n'providers' =\n [\n  ...\n  Kavenegar\\Laravel\\ServiceProvider::class,\n],\n\n\n\n\nThen add the facade to your \naliases\n array:\n\n\n'aliases' =\n [\n  ...\n  'Kavenegar' =\n Kavenegar\\Laravel\\Facade::class,\n],\n\n\n\n\nFinally, publish the config file with \nphp artisan vendor:publish\n. You'll find it at \nconfig/kavenegar.php\n.\n\n\nLaravel 4\n\n\nAdd the \nKavenegar\\Laravel\\ServiceProvider\n provider to the \nproviders\n array in \napp/config.php\n:\n\n\n'providers' =\n [\n  ...\n  'Kavenegar\\Laravel\\ServiceProvider',\n],\n\n\n\n\nThen add the facade to your \naliases\n array:\n\n\n'aliases' =\n [\n  ...\n  'Kavenegar' =\n Kavenegar\\Laravel\\Facade',\n],\n\n\n\n\nFinally, publish the config file with \nphp artisan config:publish kavenegar/laravel\n. You'll find the config file at \napp/config/packages/kavenegar/laravel/config.php\n.\n\n\nUsage\n\n\nWell, There is an example to Send SMS by Laravel below.\n\n\n\nuse Kavenegar as api;\ntry{\n    $sender = \n10004346\n;\n    $message = \nKaveh specialized Web service \n;\n    $receptor = array(\n{Your Phone Number}\n);\n    $result = api-\nSend($sender,$receptor,$message);\n    if($result){\n        foreach($result as $r){\n            echo \nmessageid = $r-\nmessageid\n;\n            echo \nmessage = $r-\nmessage\n;\n            echo \nstatus = $r-\nstatus\n;\n            echo \nstatustext = $r-\nstatustext\n;\n            echo \nsender = $r-\nsender\n;\n            echo \nreceptor = $r-\nreceptor\n;\n            echo \ndate = $r-\ndate\n;\n            echo \ncost = $r-\ncost\n;\n        }       \n    }\n}\ncatch(\\Kavenegar\\Exceptions\\ApiException $e){\n    //In case that error throw 200 \n    echo $e-\nerrorMessage();\n}\ncatch(\\Kavenegar\\Exceptions\\HttpException $e){\n//in case that there is any problem to connect to webservie  this error thow\n    echo $e-\nerrorMessage();\n}\n\n\n\n\n\nyii2\n\n\nInstallation\n\n\nInstall it these ways : \n\n\ncomposer require kavenegar/yii2\n\n\n\n\nor add\n\n\nkavenegar/yii2\n: \n*\n\n\n\n\n\nAnd run following command to download extension using \n**composer**\n:\n\n\n$ composer update\n\n\n\n\nConfiguration\n\n\nAdd the following in your config:\n\n\nreturn [\n    'components' =\n [\n        'Kavenegar' =\n [\n            'class' =\n 'Kavenegar\\Yii2\\Kavenegar',\n            'apikey' =\n '{Your API Key}',\n        ],\n    ],\n];\n\n\n\n\nUsage\n\n\nWell, There is an example to Send SMS by yii2 below.\n\n\ntry{\n    $api = Yii::$app-\nKavenegar-\nKavenegarApi();\n    $sender = \n10004346\n;\n    $message = \nKaveh specialized Web service \n;\n    $receptor = array(\n{Your Phone Number} \n);\n    $result = $api-\nSend($sender,$receptor,$message);\n    if($result){\n        foreach($result as $r){\n            echo \nmessageid = $r-\nmessageid\n;\n            echo \nmessage = $r-\nmessage\n;\n            echo \nstatus = $r-\nstatus\n;\n            echo \nstatustext = $r-\nstatustext\n;\n            echo \nsender = $r-\nsender\n;\n            echo \nreceptor = $r-\nreceptor\n;\n            echo \ndate = $r-\ndate\n;\n            echo \ncost = $r-\ncost\n;\n        }       \n    }\n}\ncatch(\\Kavenegar\\Exceptions\\ApiException $e){\n//In case that error throw 200 \n    echo $e-\nerrorMessage();\n}\ncatch(\\Kavenegar\\Exceptions\\HttpException $e){\n//in case that there is any problem to connect to webservie  this error thow\n    echo $e-\nerrorMessage();\n}", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#kavenegar-webservice", 
+            "text": "", 
+            "title": "Kavenegar Webservice"
+        }, 
+        {
+            "location": "/#kavenegar-restful-api-document", 
+            "text": "If you need to future information about API document Please visit RESTful Document  First of all, You need to make an account on Kavenegar from  Kaveneagr webpage  After that you just need to pick API-KEY up from  My Account  section.  Here You can download the  Java SDK  or just pull it.  Anyway there is good tutorial about  Pull  request", 
+            "title": "Kavenegar RESTful API Document"
+        }, 
+        {
+            "location": "/#dotnet-sdk", 
+            "text": "", 
+            "title": "Dotnet SDK"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "For installing just follow these steps:", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#fisrt-method", 
+            "text": "If you have nuget you can go to next part but if you don't have it you can download and install it  here    From tools section  Library Package Manager  select Package Manager Console .    execute  Install-Package Kavenegar  in the console.    Now   Kavenegar.dll  package is acessable in Solution explorer", 
+            "title": "Fisrt Method :"
+        }, 
+        {
+            "location": "/#second-method", 
+            "text": "Manually   Here   Downlaod SDk     Download SDk    Dowload sample code", 
+            "title": "Second method"
+        }, 
+        {
+            "location": "/#usage", 
+            "text": "From  Solution explorer  right click  on  References and form new menu select   Add Reference then choose   Kavenegar.dll  .   Well, There is an example to Send SMS by C#.  \ntry\n{\n    Kavenegar.KavenegarApi api = new Kavenegar.KavenegarApi( Your Api Key );\n    var result = api.Send( SenderLine ,  Your Receptor ,  Kaveh specialized Web service );\n    foreach (var r in result){\n      Console.Write( r.Messageid.ToString() );\n  }\n}\ncatch (Kavenegar.Exceptions.ApiException ex) \n{\n    //In case that error throw 200 \n    Console.Write( Message :   + ex.Message);\n}\ncatch (Kavenegar.Exceptions.HttpException ex) \n{\n//in case that there is any problem to connect to webservie  this error thow\n    Console.Write( Message :   + ex.Message);\n}", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#node", 
+            "text": "", 
+            "title": "Node"
+        }, 
+        {
+            "location": "/#installation_1", 
+            "text": "For installing Kavenegar vai Npm use this command    npm install kavenegar   If you don't have npm you can easily install it from   npm website", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#usage_1", 
+            "text": "Well, There is two  example to Send SMS by node below.  \nvar Kavenegar = require('kavenegar');\nvar api = Kavenegar.KavenegarApi({\n    apikey: ''\n});\napi.Send({\n        message:  Kaveh specialized Web service   ,\n        sender:  10004346 ,\n        receptor:  {Your API Key} \n    },\n    function(response, status) {\n        console.log(response);\n        console.log(status);\n    });  \nvar Kavenegar = require('kavenegar');\nvar api = Kavenegar.KavenegarApi({\n    apikey: '{Your API Key}'\n});\napi.VerifyLookup({\n    receptor:  {Your Phone Number}  ,\n    token:  852596 ,\n    template:  registerverify \n}, function(response, status) {\n    console.log(response);\n    console.log(status);\n});", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#java", 
+            "text": "", 
+            "title": "Java"
+        }, 
+        {
+            "location": "/#installation_2", 
+            "text": "To get a Git project into your build:  Add it depend on what you are using :", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#gradle", 
+            "text": "Step 1 :  Add the JitPack repository to your build file  allprojects {\n        repositories {\n            ...\n            maven { url 'https://jitpack.io' }\n        }\n    }  Step 2 : Add the dependency   dependencies {\n        compile 'com.github.User:Repo:Tag'\n    }", 
+            "title": "gradle"
+        }, 
+        {
+            "location": "/#maven", 
+            "text": "Step 1 : Add the JitPack repository to your build file   repositories \n         repository \n             id jitpack.io /id \n             url https://jitpack.io /url \n         /repository \n     /repositories   Step 2 : Add the dependency  dependency \n         groupId com.github.User /groupId \n         artifactId Repo /artifactId \n         version Tag /version \n     /dependency", 
+            "title": "maven"
+        }, 
+        {
+            "location": "/#sbt", 
+            "text": "Step 1   Add the JitPack repository to your build file       resolvers +=  jitpack  at  https://jitpack.io   Step 2 Add the dependency      libraryDependencies +=  com.github.User  %  Repo  %  Tag", 
+            "title": "sbt"
+        }, 
+        {
+            "location": "/#leiningen", 
+            "text": "Step 1   Add the JitPack repository to your build file       :repositories [[ jitpack   https://jitpack.io ]]\n\n    }  Step 2 Add the dependency      :dependencies [[com.github.User/Repo  Tag ]]", 
+            "title": "leiningen"
+        }, 
+        {
+            "location": "/#usage_2", 
+            "text": "Well,You can see an example of sending SMS through JAVA below .   \ntry {\n     KavenegarApi  api= new KavenegarApi( );\n      SendResult Result = api.Send( SenderLine ,  Your Receptor ,  Kaveh specialized Web service  );\n}\ncatch (HttpException ex)\n{//In case that error throw 200 \n\n  System.out.print( HttpException  :   + ex.getMessage());\n}\ncatch (ApiException ex)\n{ //in case that there is any problem to connect to webservie  this error thow\n\n   System.out.print( ApiException :   + ex.getMessage());\n}", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#php", 
+            "text": "", 
+            "title": "PHP"
+        }, 
+        {
+            "location": "/#installation_3", 
+            "text": "Use in these ways :   composer require kavenegar/php  or add  kavenegar/php :  *   And run following command to download extension using  composer    $ composer update", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#usage_3", 
+            "text": "Well, There is an example to Send SMS by PHP.  require __DIR__ . '/vendor/autoload.php';\n\ntry{\n    $api = new \\Kavenegar\\KavenegarApi({  {API Key}  });\n    $sender =  10004346 ;\n    $message =  Kaveh specialized Web service   ;\n    $receptor = array( {Your Phone Number} );\n    $result = $api- Send($sender,$receptor,$message);\n    if($result){\n        foreach($result as $r){\n            echo  messageid = $r- messageid ;\n            echo  message = $r- message ;\n            echo  status = $r- status ;\n            echo  statustext = $r- statustext ;\n            echo  sender = $r- sender ;\n            echo  receptor = $r- receptor ;\n            echo  date = $r- date ;\n            echo  cost = $r- cost ;\n        }       \n    }\n}\ncatch(\\Kavenegar\\Exceptions\\ApiException $e){\n//In case that error throw 200 \n    echo $e- errorMessage();\n}\ncatch(\\Kavenegar\\Exceptions\\HttpException $e){\n//in case that there is any problem to connect to webservie  this error thow\n    echo $e- errorMessage();\n}", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#python", 
+            "text": "", 
+            "title": "Python"
+        }, 
+        {
+            "location": "/#installation_4", 
+            "text": "", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#usage_4", 
+            "text": "Well, There is an example to Send SMS by Python below.  #!/usr/bin/env python\nfrom kavenegar import *\ntry:\n    import json\nexcept ImportError:\n    import simplejson as json\n\ntry:\n    api = KavenegarAPI('{Your APIKey}')\n    params = {\n        'sender': '10004346',\n        'receptor': '{Your Phone Number}',\n        'message': 'Kaveh specialized Web service '\n    }   \n    response = api.sms_send(params)\n    print str(response)\nexcept APIException,e: \n    print str(e)\nexcept HTTPException,e: \n    print str(e)", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#go", 
+            "text": "Install it  in this way   go get github.com/negah/kavenegar", 
+            "title": "go"
+        }, 
+        {
+            "location": "/#usage_5", 
+            "text": "Well, There is an example to Send SMS by go below.  package main\n\nimport (\n   github.com/negah/kavenegar \n   log \n   fmt \n)\n\nfunc main(){\n  // Setup new Client\n  // kavenegar.SMS(api_key, sender)\n  // sender is your dedicate phone_number in kavenagar. if you dont have one, left it blank but pass  \n  sms := kavenegar.NewSMS( api_key , {Your APi Key} )\n\n  // Send sms\n  status, err := sms.Send( {Your Phone Number}  ,  Hello my friend  )\n\n  if err != nil {\n    log.Printf( Response status code: %d , status)\n    log.Fatal(err)\n  } else {\n    fmt.Printf( SMS sent successfully. )\n  }\n}", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#ruby", 
+            "text": "", 
+            "title": "Ruby"
+        }, 
+        {
+            "location": "/#installation_5", 
+            "text": "", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#usage_6", 
+            "text": "Add this line to your application's Gemfile:  gem 'kave'  And then execute:  $ bundle install  Or install it yourself(localy) as:  $ gem install kave  And create init file on config directory(kave.rb):  Kave.configure do |config|\n  config.wsdl ='http://api.kavenegar.com/soap/v1.asmx?WSDL'\n  config.sender  = 'number'  Well, There is an example to Send SMS by Ruby.   request=Kave::SendRequestSimple.new({\n\n    message: '\u0633\u0644\u0627\u0645 \u0639\u0632\u06cc\u0632 :)',\n    mobile: 'Your Phone Number ',\n    #optional\n    unixdate: by default 0 ,\n    msgmode: by default 1\n})\n\nres=request.call\nrender :text= {status_message_only_farsi: res.statusmessage,status_code: res.status}", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#elixir", 
+            "text": "", 
+            "title": "Elixir"
+        }, 
+        {
+            "location": "/#installation_6", 
+            "text": "If  available in Hex , the package can be installed as:    Add kavenegar to your list of dependencies in  mix.exs :  def deps do\n  [{:kavenegar, \"~  0.0.1\"}]\nend    Ensure kavenegar is started before your application:  def application do\n  [applications: [:kavenegar]]\nend", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#usage_7", 
+            "text": "Well, There is an example to Send SMS by Elixir.  Kavenegar.send %{receptor: '{Your Phone Number}', message:  this is a sample text }  will return:  %{ entries  =  [%{ cost  =  130,  date  =  1466091791,\n      message  =   this is a sample text ,  messageid  =  999999999,\n      receptor  =   {Your Phone Number} ,  sender  =   10001000010000 ,  status  =  1,\n      statustext  =   In sending list }],\n   return  =  %{ message  =   Confirm ,  status  =  200}}", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#laravel", 
+            "text": "", 
+            "title": "Laravel"
+        }, 
+        {
+            "location": "/#requirements", 
+            "text": "Laravel 4 or 5.", 
+            "title": "Requirements"
+        }, 
+        {
+            "location": "/#installation_7", 
+            "text": "Install it this way :   composer require kavenegar/laravel", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#laravel-5", 
+            "text": "Add the  Kavenegar\\Laravel\\ServiceProvider  provider to the  providers  array in  config/app.php :  'providers' =  [\n  ...\n  Kavenegar\\Laravel\\ServiceProvider::class,\n],  Then add the facade to your  aliases  array:  'aliases' =  [\n  ...\n  'Kavenegar' =  Kavenegar\\Laravel\\Facade::class,\n],  Finally, publish the config file with  php artisan vendor:publish . You'll find it at  config/kavenegar.php .", 
+            "title": "Laravel 5"
+        }, 
+        {
+            "location": "/#laravel-4", 
+            "text": "Add the  Kavenegar\\Laravel\\ServiceProvider  provider to the  providers  array in  app/config.php :  'providers' =  [\n  ...\n  'Kavenegar\\Laravel\\ServiceProvider',\n],  Then add the facade to your  aliases  array:  'aliases' =  [\n  ...\n  'Kavenegar' =  Kavenegar\\Laravel\\Facade',\n],  Finally, publish the config file with  php artisan config:publish kavenegar/laravel . You'll find the config file at  app/config/packages/kavenegar/laravel/config.php .", 
+            "title": "Laravel 4"
+        }, 
+        {
+            "location": "/#usage_8", 
+            "text": "Well, There is an example to Send SMS by Laravel below.  \nuse Kavenegar as api;\ntry{\n    $sender =  10004346 ;\n    $message =  Kaveh specialized Web service  ;\n    $receptor = array( {Your Phone Number} );\n    $result = api- Send($sender,$receptor,$message);\n    if($result){\n        foreach($result as $r){\n            echo  messageid = $r- messageid ;\n            echo  message = $r- message ;\n            echo  status = $r- status ;\n            echo  statustext = $r- statustext ;\n            echo  sender = $r- sender ;\n            echo  receptor = $r- receptor ;\n            echo  date = $r- date ;\n            echo  cost = $r- cost ;\n        }       \n    }\n}\ncatch(\\Kavenegar\\Exceptions\\ApiException $e){\n    //In case that error throw 200 \n    echo $e- errorMessage();\n}\ncatch(\\Kavenegar\\Exceptions\\HttpException $e){\n//in case that there is any problem to connect to webservie  this error thow\n    echo $e- errorMessage();\n}", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#yii2", 
+            "text": "", 
+            "title": "yii2"
+        }, 
+        {
+            "location": "/#installation_8", 
+            "text": "Install it these ways :   composer require kavenegar/yii2  or add  kavenegar/yii2 :  *   And run following command to download extension using  **composer** :  $ composer update", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#configuration", 
+            "text": "Add the following in your config:  return [\n    'components' =  [\n        'Kavenegar' =  [\n            'class' =  'Kavenegar\\Yii2\\Kavenegar',\n            'apikey' =  '{Your API Key}',\n        ],\n    ],\n];", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/#usage_9", 
+            "text": "Well, There is an example to Send SMS by yii2 below.  try{\n    $api = Yii::$app- Kavenegar- KavenegarApi();\n    $sender =  10004346 ;\n    $message =  Kaveh specialized Web service  ;\n    $receptor = array( {Your Phone Number}  );\n    $result = $api- Send($sender,$receptor,$message);\n    if($result){\n        foreach($result as $r){\n            echo  messageid = $r- messageid ;\n            echo  message = $r- message ;\n            echo  status = $r- status ;\n            echo  statustext = $r- statustext ;\n            echo  sender = $r- sender ;\n            echo  receptor = $r- receptor ;\n            echo  date = $r- date ;\n            echo  cost = $r- cost ;\n        }       \n    }\n}\ncatch(\\Kavenegar\\Exceptions\\ApiException $e){\n//In case that error throw 200 \n    echo $e- errorMessage();\n}\ncatch(\\Kavenegar\\Exceptions\\HttpException $e){\n//in case that there is any problem to connect to webservie  this error thow\n    echo $e- errorMessage();\n}", 
+            "title": "Usage"
+        }
+    ]
+}

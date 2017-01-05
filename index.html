@@ -1,0 +1,1002 @@
+<!--
+	This Basic theme serves as an example for how to create other
+	themes by demonstrating the features with minimal HTML and CSS.
+	Comments like this will be through the code to explain briefly
+	what each feature is and point you to the MkDocs documentation
+	to find out more.
+-->
+<!DOCTYPE html>
+<head>
+	
+	<meta charset="UTF-8" />
+	
+	<!--
+		The page_title contains the title for a page as shown in the navigation.
+		Site name contains the name as defined in the mkdocs.yml
+	-->
+	<title>Kavenegar</title>
+
+	<!--
+		Support custom favicon support.
+		http://www.mkdocs.org/user-guide/configuration/#site_favicon
+	-->
+	
+		<link rel="shortcut icon" href="./img/favicon.ico">
+	
+
+	<!--
+		You can include external assets of course, but be aware that it means the
+		documentation may not work well offline.
+	-->
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+	<link rel="stylesheet" href="./css/theme.css">
+
+	<!--
+		extra_ess contains paths to CSS files in the users
+		documentation directory or a list of CSS files defined in
+		their mkdocs.yml.
+
+		http://www.mkdocs.org/user-guide/configuration/#extra_css
+	-->
+	
+
+	<link rel="stylesheet" href="./css/darkula.css">
+	<script src="./js/highlight.pack.js"></script>
+	
+	<!--
+		Include Google Analytics tracking code.
+
+		http://www.mkdocs.org/user-guide/configuration/#google_analytics
+	-->
+	
+
+	
+	
+</head>
+
+<body>
+
+	<div class="sidebar right">
+
+		<ul>
+		
+			
+				
+				
+
+	<li class="active">
+	
+		<a href=".">Home</a>
+		
+	</li>
+
+
+			
+			
+		
+		</ul>
+		
+	</div>
+	
+	<div class="body rel left">
+	
+		<header>
+		
+			<div class="left">
+			
+				<h1>Kavenegar</h1>
+			
+			</div>
+		
+			<div role="search" class="right">
+			
+				<form action="./search.html" class="rel" method="get">
+				
+					<input type="text" name="q" placeholder="Search" />
+					
+					<input type="submit" class="abs search-submit" value="" />
+					
+				</form>
+				
+			</div>
+		
+		</header>
+		
+		<main class="rel oh">
+		
+			
+		
+				<div class="right toc">
+				
+					<ul>
+						
+						
+							
+							<li class="title">
+							
+								<a href="#kavenegar-webservice">Kavenegar Webservice</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#kavenegar-restful-api-document">Kavenegar RESTful API Document</a>
+									
+								</li>
+							
+							
+							
+						
+							
+							<li class="title">
+							
+								<a href="#dotnet-sdk">Dotnet SDK</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#installation">Installation</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#usage">Usage</a>
+									
+								</li>
+							
+							
+							
+						
+							
+							<li class="title">
+							
+								<a href="#node">Node</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#installation_1">Installation</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#usage_1">Usage</a>
+									
+								</li>
+							
+							
+							
+						
+							
+							<li class="title">
+							
+								<a href="#java">Java</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#installation_2">Installation</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#gradle">gradle</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#maven">maven</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#sbt">sbt</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#leiningen">leiningen</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#usage_2">Usage</a>
+									
+								</li>
+							
+							
+							
+						
+							
+							<li class="title">
+							
+								<a href="#php">PHP</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#installation_3">Installation</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#usage_3">Usage</a>
+									
+								</li>
+							
+							
+							
+						
+							
+							<li class="title">
+							
+								<a href="#python">Python</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#installation_4">Installation</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#usage_4">Usage</a>
+									
+								</li>
+							
+							
+							
+						
+							
+							<li class="title">
+							
+								<a href="#go">go</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#usage_5">Usage</a>
+									
+								</li>
+							
+							
+							
+						
+							
+							<li class="title">
+							
+								<a href="#ruby">Ruby</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#installation_5">Installation</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#usage_6">Usage</a>
+									
+								</li>
+							
+							
+							
+						
+							
+							<li class="title">
+							
+								<a href="#elixir">Elixir</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#installation_6">Installation</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#usage_7">Usage</a>
+									
+								</li>
+							
+							
+							
+						
+							
+							<li class="title">
+							
+								<a href="#laravel">Laravel</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#requirements">Requirements</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#installation_7">Installation</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#laravel-5">Laravel 5</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#laravel-4">Laravel 4</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#usage_8">Usage</a>
+									
+								</li>
+							
+							
+							
+						
+							
+							<li class="title">
+							
+								<a href="#yii2">yii2</a>
+								
+							</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#installation_8">Installation</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#configuration">Configuration</a>
+									
+								</li>
+							
+							
+								
+								<li class="sub-title">
+								
+									<a href="#usage_9">Usage</a>
+									
+								</li>
+							
+							
+							
+						
+						
+					</ul>
+					
+				</div>
+			
+			
+			
+			<div class="left content">
+		
+				
+					
+					<h1 id="kavenegar-webservice">Kavenegar Webservice</h1>
+<h2 id="kavenegar-restful-api-document"><a href="http://kavenegar.com/rest.html">Kavenegar</a> RESTful API Document</a></h2>
+<p>If you need to future information about API document Please visit RESTful Document</p>
+<p>First of all, You need to make an account on Kavenegar from <a href="https://panel.kavenegar.com/Client/Membership/Register">Kaveneagr webpage</a></p>
+<p>After that you just need to pick API-KEY up from <a href="http://panel.kavenegar.com/Client/setting/index">My Account</a> section.</p>
+<p>Here You can download the <a href="https://github.com/KaveNegar/kavenegar-java/archive/master.zip">Java SDK</a> or just pull it.</p>
+<p>Anyway there is good tutorial about <a href="http://gun.io/blog/how-to-github-fork-branch-and-pull-request/">Pull  request</a></p>
+<hr />
+<h1 id="dotnet-sdk">Dotnet SDK</h1>
+<h2 id="installation">Installation</h2>
+<p>For installing just follow these steps:</p>
+<h3 id="fisrt-method">Fisrt Method :</h3>
+<ul>
+<li>
+<p>If you have nuget you can go to next part but if you don't have it you can download and install it <a href="https://www.nuget.org/">here</a></p>
+</li>
+<li>
+<p>From tools section  Library Package Manager  select Package Manager Console .</p>
+</li>
+<li>
+<p>execute <code>Install-Package Kavenegar</code> in the console.</p>
+</li>
+<li>
+<p>Now  <code>Kavenegar.dll</code> package is acessable in Solution explorer</p>
+</li>
+</ul>
+<h3 id="second-method">Second method</h3>
+<ul>
+<li>Manually  <a href="https://github.com/KaveNegar/kavenegar-csharp/blob/master/Kavenegar/bin/Debug/Kavenegar.dll">Here </a> Downlaod SDk </li>
+</ul>
+<p><a href="https://github.com/KaveNegar/kavenegar-csharp/archive/master.zip"> Download SDk </a></p>
+<p><a href="https://github.com/KaveNegar/kavenegar-examples-csharp/archive/master.zip"> Dowload sample code </a></p>
+<hr />
+<h2 id="usage">Usage</h2>
+<ul>
+<li>From  Solution explorer <code>right click</code> on  References and form new menu select  <code>Add Reference</code>then choose  <code>Kavenegar.dll</code> .</li>
+</ul>
+<p>Well, There is an example to Send SMS by C#.</p>
+<pre><code>
+try
+{
+    Kavenegar.KavenegarApi api = new Kavenegar.KavenegarApi(&quot;Your Api Key&quot;);
+    var result = api.Send(&quot;SenderLine&quot;, &quot;Your Receptor&quot;, &quot;Kaveh specialized Web service&quot;);
+    foreach (var r in result){
+      Console.Write(&quot;r.Messageid.ToString()&quot;);
+  }
+}
+catch (Kavenegar.Exceptions.ApiException ex) 
+{
+    //In case that error throw 200 
+    Console.Write(&quot;Message : &quot; + ex.Message);
+}
+catch (Kavenegar.Exceptions.HttpException ex) 
+{
+//in case that there is any problem to connect to webservie  this error thow
+    Console.Write(&quot;Message : &quot; + ex.Message);
+}
+
+</code></pre>
+
+<h1 id="node">Node</h1>
+<h2 id="installation_1">Installation</h2>
+<p>For installing Kavenegar vai Npm use this command  </p>
+<pre><code class="javascript">npm install kavenegar 
+</code></pre>
+
+<p>If you don't have npm you can easily install it from  <a href="https://www.npmjs.com/">npm website</a></p>
+<h2 id="usage_1">Usage</h2>
+<p>Well, There is two  example to Send SMS by node below.</p>
+<pre><code class="javascript">
+var Kavenegar = require('kavenegar');
+var api = Kavenegar.KavenegarApi({
+    apikey: ''
+});
+api.Send({
+        message: &quot;Kaveh specialized Web service  &quot;,
+        sender: &quot;10004346&quot;,
+        receptor: &quot;{Your API Key}&quot;
+    },
+    function(response, status) {
+        console.log(response);
+        console.log(status);
+    });
+
+</code></pre>
+
+<pre><code class="javascript">
+var Kavenegar = require('kavenegar');
+var api = Kavenegar.KavenegarApi({
+    apikey: '{Your API Key}'
+});
+api.VerifyLookup({
+    receptor: &quot;{Your Phone Number} &quot;,
+    token: &quot;852596&quot;,
+    template: &quot;registerverify&quot;
+}, function(response, status) {
+    console.log(response);
+    console.log(status);
+});
+
+</code></pre>
+
+<hr />
+<h1 id="java">Java</h1>
+<h2 id="installation_2">Installation</h2>
+<p>To get a Git project into your build:</p>
+<p>Add it depend on what you are using :</p>
+<h2 id="gradle">gradle</h2>
+<p>Step 1 :  Add the JitPack repository to your build file</p>
+<pre><code class="java">allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+</code></pre>
+
+<p>Step 2 : Add the dependency </p>
+<pre><code class="java">dependencies {
+        compile 'com.github.User:Repo:Tag'
+    }
+</code></pre>
+
+<h2 id="maven">maven</h2>
+<p>Step 1 : Add the JitPack repository to your build file </p>
+<pre><code class="java">&lt;repositories&gt;
+        &lt;repository&gt;
+            &lt;id&gt;jitpack.io&lt;/id&gt;
+            &lt;url&gt;https://jitpack.io&lt;/url&gt;
+        &lt;/repository&gt;
+    &lt;/repositories&gt;
+</code></pre>
+
+<p>Step 2 : Add the dependency</p>
+<pre><code class="java">&lt;dependency&gt;
+        &lt;groupId&gt;com.github.User&lt;/groupId&gt;
+        &lt;artifactId&gt;Repo&lt;/artifactId&gt;
+        &lt;version&gt;Tag&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre>
+
+<h2 id="sbt">sbt</h2>
+<p>Step 1 <p> Add the JitPack repository to your build file </p></p>
+<pre><code class="java">    resolvers += &quot;jitpack&quot; at &quot;https://jitpack.io&quot;
+
+</code></pre>
+
+<p>Step 2<p>Add the dependency</p></p>
+<pre><code class="java">    libraryDependencies += &quot;com.github.User&quot; % &quot;Repo&quot; % &quot;Tag&quot;
+
+</code></pre>
+
+<h2 id="leiningen">leiningen</h2>
+<p>Step 1 <p> Add the JitPack repository to your build file </p></p>
+<pre><code class="java">    :repositories [[&quot;jitpack&quot; &quot;https://jitpack.io&quot;]]
+
+    }
+</code></pre>
+
+<p>Step 2<p>Add the dependency</p></p>
+<pre><code class="java">    :dependencies [[com.github.User/Repo &quot;Tag&quot;]]
+
+</code></pre>
+
+<h2 id="usage_2">Usage</h2>
+<p>Well,You can see an example of sending SMS through JAVA below . </p>
+<pre><code class="java">
+try {
+     KavenegarApi  api= new KavenegarApi(&quot;&quot;);
+      SendResult Result = api.Send(&quot;SenderLine&quot;, &quot;Your Receptor&quot;, &quot;Kaveh specialized Web service &quot;);
+}
+catch (HttpException ex)
+{//In case that error throw 200 
+
+  System.out.print(&quot;HttpException  : &quot; + ex.getMessage());
+}
+catch (ApiException ex)
+{ //in case that there is any problem to connect to webservie  this error thow
+
+   System.out.print(&quot;ApiException : &quot; + ex.getMessage());
+}
+
+</code></pre>
+
+<hr />
+<h1 id="php">PHP</h1>
+<h2 id="installation_3">Installation</h2>
+<p>Use in these ways : </p>
+<pre><code class="php">composer require kavenegar/php
+</code></pre>
+
+<p>or add</p>
+<pre><code class="php">&quot;kavenegar/php&quot;: &quot;*&quot;
+</code></pre>
+
+<p>And run following command to download extension using <strong>composer</strong> </p>
+<pre><code class="php">$ composer update
+</code></pre>
+
+<h2 id="usage_3">Usage</h2>
+<p>Well, There is an example to Send SMS by PHP.</p>
+<pre><code class="php">require __DIR__ . '/vendor/autoload.php';
+
+try{
+    $api = new \Kavenegar\KavenegarApi({ &quot;{API Key}&quot; });
+    $sender = &quot;10004346&quot;;
+    $message = &quot;Kaveh specialized Web service  &quot;;
+    $receptor = array(&quot;{Your Phone Number}&quot;);
+    $result = $api-&gt;Send($sender,$receptor,$message);
+    if($result){
+        foreach($result as $r){
+            echo &quot;messageid = $r-&gt;messageid&quot;;
+            echo &quot;message = $r-&gt;message&quot;;
+            echo &quot;status = $r-&gt;status&quot;;
+            echo &quot;statustext = $r-&gt;statustext&quot;;
+            echo &quot;sender = $r-&gt;sender&quot;;
+            echo &quot;receptor = $r-&gt;receptor&quot;;
+            echo &quot;date = $r-&gt;date&quot;;
+            echo &quot;cost = $r-&gt;cost&quot;;
+        }       
+    }
+}
+catch(\Kavenegar\Exceptions\ApiException $e){
+//In case that error throw 200 
+    echo $e-&gt;errorMessage();
+}
+catch(\Kavenegar\Exceptions\HttpException $e){
+//in case that there is any problem to connect to webservie  this error thow
+    echo $e-&gt;errorMessage();
+}
+
+
+</code></pre>
+
+<hr />
+<h1 id="python">Python</h1>
+<h2 id="installation_4">Installation</h2>
+<h2 id="usage_4">Usage</h2>
+<p>Well, There is an example to Send SMS by Python below.</p>
+<pre><code class="python">#!/usr/bin/env python
+from kavenegar import *
+try:
+    import json
+except ImportError:
+    import simplejson as json
+
+try:
+    api = KavenegarAPI('{Your APIKey}')
+    params = {
+        'sender': '10004346',
+        'receptor': '{Your Phone Number}',
+        'message': 'Kaveh specialized Web service '
+    }   
+    response = api.sms_send(params)
+    print str(response)
+except APIException,e: 
+    print str(e)
+except HTTPException,e: 
+    print str(e)
+
+</code></pre>
+
+<hr />
+<h1 id="go">go <a href="https://travis-ci.org/negah/kavenegar"><img alt="Build Status" src="https://travis-ci.org/negah/kavenegar.svg?branch=master" /></a></h1>
+<p>Install it  in this way </p>
+<pre><code class="shell">go get github.com/negah/kavenegar
+</code></pre>
+
+<h2 id="usage_5">Usage</h2>
+<p>Well, There is an example to Send SMS by go below.</p>
+<pre><code class="go">package main
+
+import (
+  &quot;github.com/negah/kavenegar&quot;
+  &quot;log&quot;
+  &quot;fmt&quot;
+)
+
+func main(){
+  // Setup new Client
+  // kavenegar.SMS(api_key, sender)
+  // sender is your dedicate phone_number in kavenagar. if you dont have one, left it blank but pass &quot;&quot;
+  sms := kavenegar.NewSMS(&quot;api_key&quot;,&quot;{Your APi Key}&quot;)
+
+  // Send sms
+  status, err := sms.Send(&quot;{Your Phone Number} &quot;, &quot;Hello my friend &quot;)
+
+  if err != nil {
+    log.Printf(&quot;Response status code: %d&quot;, status)
+    log.Fatal(err)
+  } else {
+    fmt.Printf(&quot;SMS sent successfully.&quot;)
+  }
+}
+
+</code></pre>
+
+<hr />
+<h1 id="ruby">Ruby</h1>
+<h2 id="installation_5">Installation</h2>
+<h2 id="usage_6">Usage</h2>
+<p>Add this line to your application's Gemfile:</p>
+<pre><code class="ruby">gem 'kave'
+</code></pre>
+
+<p>And then execute:</p>
+<pre><code class="bash">$ bundle install
+</code></pre>
+
+<p>Or install it yourself(localy) as:</p>
+<pre><code>$ gem install kave
+</code></pre>
+
+<p>And create init file on config directory(kave.rb):</p>
+<pre><code class="ruby">Kave.configure do |config|
+  config.wsdl ='http://api.kavenegar.com/soap/v1.asmx?WSDL'
+  config.sender  = 'number'
+</code></pre>
+
+<p>Well, There is an example to Send SMS by Ruby.</p>
+<pre><code class="Ruby"> request=Kave::SendRequestSimple.new({
+
+    message: 'سلام عزیز :)',
+    mobile: 'Your Phone Number ',
+    #optional
+    unixdate: by default 0 ,
+    msgmode: by default 1
+})
+
+res=request.call
+render :text=&gt;{status_message_only_farsi: res.statusmessage,status_code: res.status}
+</code></pre>
+
+<hr />
+<h1 id="elixir">Elixir</h1>
+<hr />
+<h2 id="installation_6">Installation</h2>
+<p>If <a href="https://hex.pm/docs/publish">available in Hex</a>, the package can be installed as:</p>
+<ol>
+<li>
+<p>Add kavenegar to your list of dependencies in <code>mix.exs</code>:</p>
+<pre><code>def deps do
+  [{:kavenegar, "~&gt; 0.0.1"}]
+end
+</code></pre>
+</li>
+<li>
+<p>Ensure kavenegar is started before your application:</p>
+<pre><code>def application do
+  [applications: [:kavenegar]]
+end
+</code></pre>
+</li>
+</ol>
+<h2 id="usage_7">Usage</h2>
+<p>Well, There is an example to Send SMS by Elixir.</p>
+<pre><code class="php">Kavenegar.send %{receptor: '{Your Phone Number}', message: &quot;this is a sample text&quot;}
+</code></pre>
+
+<p>will return:</p>
+<pre><code class="php">%{&quot;entries&quot; =&gt; [%{&quot;cost&quot; =&gt; 130, &quot;date&quot; =&gt; 1466091791,
+     &quot;message&quot; =&gt; &quot;this is a sample text&quot;, &quot;messageid&quot; =&gt; 999999999,
+     &quot;receptor&quot; =&gt; &quot;{Your Phone Number}&quot;, &quot;sender&quot; =&gt; &quot;10001000010000&quot;, &quot;status&quot; =&gt; 1,
+     &quot;statustext&quot; =&gt; &quot;In sending list&quot;}],
+  &quot;return&quot; =&gt; %{&quot;message&quot; =&gt; &quot;Confirm&quot;, &quot;status&quot; =&gt; 200}}
+</code></pre>
+
+<hr />
+<h1 id="laravel">Laravel</h1>
+<hr />
+<h2 id="requirements">Requirements</h2>
+<p>Laravel 4 or 5.</p>
+<h2 id="installation_7">Installation</h2>
+<p>Install it this way : </p>
+<pre><code class="sh">composer require kavenegar/laravel
+</code></pre>
+
+<h2 id="laravel-5">Laravel 5</h2>
+<p>Add the <code>Kavenegar\Laravel\ServiceProvider</code> provider to the <code>providers</code> array in <code>config/app.php</code>:</p>
+<pre><code class="php">'providers' =&gt; [
+  ...
+  Kavenegar\Laravel\ServiceProvider::class,
+],
+</code></pre>
+
+<p>Then add the facade to your <code>aliases</code> array:</p>
+<pre><code class="php">'aliases' =&gt; [
+  ...
+  'Kavenegar' =&gt; Kavenegar\Laravel\Facade::class,
+],
+</code></pre>
+
+<p>Finally, publish the config file with <code>php artisan vendor:publish</code>. You'll find it at <code>config/kavenegar.php</code>.</p>
+<h2 id="laravel-4">Laravel 4</h2>
+<p>Add the <code>Kavenegar\Laravel\ServiceProvider</code> provider to the <code>providers</code> array in <code>app/config.php</code>:</p>
+<pre><code class="php">'providers' =&gt; [
+  ...
+  'Kavenegar\Laravel\ServiceProvider',
+],
+</code></pre>
+
+<p>Then add the facade to your <code>aliases</code> array:</p>
+<pre><code class="php">'aliases' =&gt; [
+  ...
+  'Kavenegar' =&gt; Kavenegar\Laravel\Facade',
+],
+</code></pre>
+
+<p>Finally, publish the config file with <code>php artisan config:publish kavenegar/laravel</code>. You'll find the config file at <code>app/config/packages/kavenegar/laravel/config.php</code>.</p>
+<h2 id="usage_8">Usage</h2>
+<p>Well, There is an example to Send SMS by Laravel below.</p>
+<pre><code class="php">
+use Kavenegar as api;
+try{
+    $sender = &quot;10004346&quot;;
+    $message = &quot;Kaveh specialized Web service &quot;;
+    $receptor = array(&quot;{Your Phone Number}&quot;);
+    $result = api-&gt;Send($sender,$receptor,$message);
+    if($result){
+        foreach($result as $r){
+            echo &quot;messageid = $r-&gt;messageid&quot;;
+            echo &quot;message = $r-&gt;message&quot;;
+            echo &quot;status = $r-&gt;status&quot;;
+            echo &quot;statustext = $r-&gt;statustext&quot;;
+            echo &quot;sender = $r-&gt;sender&quot;;
+            echo &quot;receptor = $r-&gt;receptor&quot;;
+            echo &quot;date = $r-&gt;date&quot;;
+            echo &quot;cost = $r-&gt;cost&quot;;
+        }       
+    }
+}
+catch(\Kavenegar\Exceptions\ApiException $e){
+    //In case that error throw 200 
+    echo $e-&gt;errorMessage();
+}
+catch(\Kavenegar\Exceptions\HttpException $e){
+//in case that there is any problem to connect to webservie  this error thow
+    echo $e-&gt;errorMessage();
+}
+
+</code></pre>
+
+<h1 id="yii2">yii2</h1>
+<h2 id="installation_8">Installation</h2>
+<p>Install it these ways : </p>
+<pre><code class="php">composer require kavenegar/yii2
+</code></pre>
+
+<p>or add</p>
+<pre><code class="php">&quot;kavenegar/yii2&quot;: &quot;*&quot;
+</code></pre>
+
+<p>And run following command to download extension using <code>**composer**</code>:</p>
+<pre><code class="php">$ composer update
+</code></pre>
+
+<h2 id="configuration">Configuration</h2>
+<p>Add the following in your config:</p>
+<pre><code class="php">return [
+    'components' =&gt; [
+        'Kavenegar' =&gt; [
+            'class' =&gt; 'Kavenegar\Yii2\Kavenegar',
+            'apikey' =&gt; '{Your API Key}',
+        ],
+    ],
+];
+</code></pre>
+
+<h2 id="usage_9">Usage</h2>
+<p>Well, There is an example to Send SMS by yii2 below.</p>
+<pre><code class="php">try{
+    $api = Yii::$app-&gt;Kavenegar-&gt;KavenegarApi();
+    $sender = &quot;10004346&quot;;
+    $message = &quot;Kaveh specialized Web service &quot;;
+    $receptor = array(&quot;{Your Phone Number} &quot;);
+    $result = $api-&gt;Send($sender,$receptor,$message);
+    if($result){
+        foreach($result as $r){
+            echo &quot;messageid = $r-&gt;messageid&quot;;
+            echo &quot;message = $r-&gt;message&quot;;
+            echo &quot;status = $r-&gt;status&quot;;
+            echo &quot;statustext = $r-&gt;statustext&quot;;
+            echo &quot;sender = $r-&gt;sender&quot;;
+            echo &quot;receptor = $r-&gt;receptor&quot;;
+            echo &quot;date = $r-&gt;date&quot;;
+            echo &quot;cost = $r-&gt;cost&quot;;
+        }       
+    }
+}
+catch(\Kavenegar\Exceptions\ApiException $e){
+//In case that error throw 200 
+    echo $e-&gt;errorMessage();
+}
+catch(\Kavenegar\Exceptions\HttpException $e){
+//in case that there is any problem to connect to webservie  this error thow
+    echo $e-&gt;errorMessage();
+}
+
+
+</code></pre>
+				
+				
+
+			</div>
+
+		</main>
+	
+		<footer class="oh">
+		
+			
+				
+				
+				
+					<a class="left" href="https://github.com/kavenegar/mkdocs-jinks">Fork on Github</a>
+					
+				
+				
+			
+			
+			<a class="right" href="http://www.mkdocs.org">Built with: MkDocs.</a>
+
+		</footer>
+	
+	</div>
+	
+	<!--
+		To include static assets from our theme, just add
+		. beforehand which will be the relative path to
+		the root of the documentation.
+	-->
+	<script src="./js/theme.js"></script>
+
+	<!--
+		extra_javascript contains paths to JavaScript files in the
+		users documentation directory or a list of JavaScript files
+		defined in their mkdocs.yml.
+
+		http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+	-->
+	
+
+</body>
+</html>
