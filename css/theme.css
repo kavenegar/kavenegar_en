@@ -1,3 +1,4 @@
+ 
 /* =============== Fonts ================ */
 
 @import url(https://fonts.googleapis.com/css?family=Lato:300,900);
@@ -178,7 +179,7 @@ header h1 {
 
 header {
     background: -webkit-linear-gradient(to left, #E6DADA , #274046);
-    background: linear-gradient(to left, #E6DADA , #274046);	overflow: hidden;
+    background: linear-gradient(to left, #bdc3c7 , #2c3e50);	overflow: hidden;
 	padding: 50px;
 	color: #fff;
 	text-shadow: 0 1px 0 #333;
@@ -278,13 +279,16 @@ header {
 
 .content code, .content .code {
 	padding: 10px;
-	background: #333;
-	color: #fff;
+	color: #000;
 	font: 16px 'Courier new', courier, monospace;
 }
 .content .code {
 	margin: 5px 0;
 	overflow: auto;
+        background-image: url(https://www.mailgun.com/static/img/code.png);
+    background-size: 997px 635px;
+    background-repeat: no-repeat;
+        padding-top: 29px;
 }
 .content code {
 	margin: 3px 5px;
@@ -376,7 +380,7 @@ header {
 
 footer {
     background: -webkit-linear-gradient(to left, #E6DADA , #274046);
-    background: linear-gradient(to left, #E6DADA , #274046);	color: #fff;
+    background: linear-gradient(to left, #bdc3c7 , #2c3e50);	color: #fff;
 	position: absolute;
 	bottom: 0;
 	left: 0;
