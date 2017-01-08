@@ -93,9 +93,9 @@
 			
 				<form action="./search.html" class="rel" method="get">
 				
-					<input type="text" name="q" placeholder="Search" />
+					<input type="text" name="q" placeholder="Search">
 					
-					<input type="submit" class="abs search-submit" value="" />
+					<input type="submit" class="abs search-submit" value="">
 					
 				</form>
 				
@@ -107,7 +107,7 @@
 		
 			
 		
-				<div class="right toc">
+				<div class="left toc">
 				
 					<ul>
 						
@@ -458,13 +458,13 @@
 				
 					
 					<h1 id="kavenegar-webservice">Kavenegar Webservice</h1>
-<h2 id="kavenegar-restful-api-document"><a href="http://kavenegar.com/rest.html">Kavenegar</a> RESTful API Document</a></h2>
+<h2 id="kavenegar-restful-api-document"><a href="http://kavenegar.com/rest.html">Kavenegar</a> RESTful API Document</h2>
 <p>If you need to future information about API document Please visit RESTful Document</p>
 <p>First of all, You need to make an account on Kavenegar from <a href="https://panel.kavenegar.com/Client/Membership/Register">Kaveneagr webpage</a></p>
 <p>After that you just need to pick API-KEY up from <a href="http://panel.kavenegar.com/Client/setting/index">My Account</a> section.</p>
 <p>Here You can download the <a href="https://github.com/KaveNegar/kavenegar-java/archive/master.zip">Java SDK</a> or just pull it.</p>
 <p>Anyway there is good tutorial about <a href="http://gun.io/blog/how-to-github-fork-branch-and-pull-request/">Pull  request</a></p>
-<hr />
+<hr>
 <h1 id="dotnet-sdk">Dotnet SDK</h1>
 <h2 id="installation">Installation</h2>
 <p>For installing just follow these steps:</p>
@@ -489,30 +489,30 @@
 </ul>
 <p><a href="https://github.com/KaveNegar/kavenegar-csharp/archive/master.zip"> Download SDk </a></p>
 <p><a href="https://github.com/KaveNegar/kavenegar-examples-csharp/archive/master.zip"> Dowload sample code </a></p>
-<hr />
+<hr>
 <h2 id="usage">Usage</h2>
 <ul>
 <li>From  Solution explorer <code>right click</code> on  References and form new menu select  <code>Add Reference</code>then choose  <code>Kavenegar.dll</code> .</li>
 </ul>
 <p>Well, There is an example to Send SMS by C#.</p>
-<pre><code>
-try
+<pre class="ltr ta-left code"><code class="hljs cs">
+<span class="hljs-keyword">try</span>
 {
-    Kavenegar.KavenegarApi api = new Kavenegar.KavenegarApi(&quot;Your Api Key&quot;);
-    var result = api.Send(&quot;SenderLine&quot;, &quot;Your Receptor&quot;, &quot;Kaveh specialized Web service&quot;);
-    foreach (var r in result){
-      Console.Write(&quot;r.Messageid.ToString()&quot;);
+    Kavenegar.KavenegarApi api = <span class="hljs-keyword">new</span> Kavenegar.KavenegarApi(<span class="hljs-string">"Your Api Key"</span>);
+    <span class="hljs-keyword">var</span> result = api.Send(<span class="hljs-string">"SenderLine"</span>, <span class="hljs-string">"Your Receptor"</span>, <span class="hljs-string">"Kaveh specialized Web service"</span>);
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> r <span class="hljs-keyword">in</span> result){
+      Console.Write(<span class="hljs-string">"r.Messageid.ToString()"</span>);
   }
 }
-catch (Kavenegar.Exceptions.ApiException ex) 
+<span class="hljs-keyword">catch</span> (Kavenegar.Exceptions.ApiException ex) 
 {
-    //In case that error throw 200 
-    Console.Write(&quot;Message : &quot; + ex.Message);
+    <span class="hljs-comment">//In case that error throw 200 </span>
+    Console.Write(<span class="hljs-string">"Message : "</span> + ex.Message);
 }
-catch (Kavenegar.Exceptions.HttpException ex) 
+<span class="hljs-keyword">catch</span> (Kavenegar.Exceptions.HttpException ex) 
 {
-//in case that there is any problem to connect to webservie  this error thow
-    Console.Write(&quot;Message : &quot; + ex.Message);
+<span class="hljs-comment">//in case that there is any problem to connect to webservie  this error thow</span>
+    Console.Write(<span class="hljs-string">"Message : "</span> + ex.Message);
 }
 
 </code></pre>
@@ -520,78 +520,78 @@ catch (Kavenegar.Exceptions.HttpException ex)
 <h1 id="node">Node</h1>
 <h2 id="installation_1">Installation</h2>
 <p>For installing Kavenegar vai Npm use this command  </p>
-<pre><code class="javascript">npm install kavenegar 
+<pre class="ltr ta-left code"><code class="javascript hljs">npm install kavenegar 
 </code></pre>
 
 <p>If you don't have npm you can easily install it from  <a href="https://www.npmjs.com/">npm website</a></p>
 <h2 id="usage_1">Usage</h2>
 <p>Well, There is two  example to Send SMS by node below.</p>
-<pre><code class="javascript">
-var Kavenegar = require('kavenegar');
-var api = Kavenegar.KavenegarApi({
-    apikey: ''
+<pre class="ltr ta-left code"><code class="javascript hljs">
+<span class="hljs-keyword">var</span> Kavenegar = <span class="hljs-built_in">require</span>(<span class="hljs-string">'kavenegar'</span>);
+<span class="hljs-keyword">var</span> api = Kavenegar.KavenegarApi({
+    apikey: <span class="hljs-string">''</span>
 });
 api.Send({
-        message: &quot;Kaveh specialized Web service  &quot;,
-        sender: &quot;10004346&quot;,
-        receptor: &quot;{Your API Key}&quot;
+        message: <span class="hljs-string">"Kaveh specialized Web service  "</span>,
+        sender: <span class="hljs-string">"10004346"</span>,
+        receptor: <span class="hljs-string">"{Your API Key}"</span>
     },
-    function(response, status) {
-        console.log(response);
-        console.log(status);
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">response, status</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(response);
+        <span class="hljs-built_in">console</span>.log(status);
     });
 
 </code></pre>
 
-<pre><code class="javascript">
-var Kavenegar = require('kavenegar');
-var api = Kavenegar.KavenegarApi({
-    apikey: '{Your API Key}'
+<pre class="ltr ta-left code"><code class="javascript hljs">
+<span class="hljs-keyword">var</span> Kavenegar = <span class="hljs-built_in">require</span>(<span class="hljs-string">'kavenegar'</span>);
+<span class="hljs-keyword">var</span> api = Kavenegar.KavenegarApi({
+    apikey: <span class="hljs-string">'{Your API Key}'</span>
 });
 api.VerifyLookup({
-    receptor: &quot;{Your Phone Number} &quot;,
-    token: &quot;852596&quot;,
-    template: &quot;registerverify&quot;
-}, function(response, status) {
-    console.log(response);
-    console.log(status);
+    receptor: <span class="hljs-string">"{Your Phone Number} "</span>,
+    token: <span class="hljs-string">"852596"</span>,
+    template: <span class="hljs-string">"registerverify"</span>
+}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">response, status</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(response);
+    <span class="hljs-built_in">console</span>.log(status);
 });
 
 </code></pre>
 
-<hr />
+<hr>
 <h1 id="java">Java</h1>
 <h2 id="installation_2">Installation</h2>
 <p>To get a Git project into your build:</p>
 <p>Add it depend on what you are using :</p>
 <h2 id="gradle">gradle</h2>
 <p>Step 1 :  Add the JitPack repository to your build file</p>
-<pre><code class="java">allprojects {
+<pre class="ltr ta-left code"><code class="java hljs">allprojects {
         repositories {
             ...
-            maven { url 'https://jitpack.io' }
+            maven { url <span class="hljs-string">'https://jitpack.io'</span> }
         }
     }
 </code></pre>
 
 <p>Step 2 : Add the dependency </p>
-<pre><code class="java">dependencies {
-        compile 'com.github.User:Repo:Tag'
+<pre class="ltr ta-left code"><code class="java hljs">dependencies {
+        compile <span class="hljs-string">'com.github.User:Repo:Tag'</span>
     }
 </code></pre>
 
 <h2 id="maven">maven</h2>
 <p>Step 1 : Add the JitPack repository to your build file </p>
-<pre><code class="java">&lt;repositories&gt;
+<pre class="ltr ta-left code"><code class="java hljs">&lt;repositories&gt;
         &lt;repository&gt;
             &lt;id&gt;jitpack.io&lt;/id&gt;
-            &lt;url&gt;https://jitpack.io&lt;/url&gt;
+            &lt;url&gt;https:<span class="hljs-comment">//jitpack.io&lt;/url&gt;</span>
         &lt;/repository&gt;
     &lt;/repositories&gt;
 </code></pre>
 
 <p>Step 2 : Add the dependency</p>
-<pre><code class="java">&lt;dependency&gt;
+<pre class="ltr ta-left code"><code class="java hljs">&lt;dependency&gt;
         &lt;groupId&gt;com.github.User&lt;/groupId&gt;
         &lt;artifactId&gt;Repo&lt;/artifactId&gt;
         &lt;version&gt;Tag&lt;/version&gt;
@@ -599,302 +599,302 @@ api.VerifyLookup({
 </code></pre>
 
 <h2 id="sbt">sbt</h2>
-<p>Step 1 <p> Add the JitPack repository to your build file </p></p>
-<pre><code class="java">    resolvers += &quot;jitpack&quot; at &quot;https://jitpack.io&quot;
+<p>Step 1 </p><p> Add the JitPack repository to your build file </p><p></p>
+<pre class="ltr ta-left code"><code class="java hljs">    resolvers += <span class="hljs-string">"jitpack"</span> at <span class="hljs-string">"https://jitpack.io"</span>
 
 </code></pre>
 
-<p>Step 2<p>Add the dependency</p></p>
-<pre><code class="java">    libraryDependencies += &quot;com.github.User&quot; % &quot;Repo&quot; % &quot;Tag&quot;
+<p>Step 2</p><p>Add the dependency</p><p></p>
+<pre class="ltr ta-left code"><code class="java hljs">    libraryDependencies += <span class="hljs-string">"com.github.User"</span> % <span class="hljs-string">"Repo"</span> % <span class="hljs-string">"Tag"</span>
 
 </code></pre>
 
 <h2 id="leiningen">leiningen</h2>
-<p>Step 1 <p> Add the JitPack repository to your build file </p></p>
-<pre><code class="java">    :repositories [[&quot;jitpack&quot; &quot;https://jitpack.io&quot;]]
+<p>Step 1 </p><p> Add the JitPack repository to your build file </p><p></p>
+<pre class="ltr ta-left code"><code class="java hljs">    :repositories [[<span class="hljs-string">"jitpack"</span> <span class="hljs-string">"https://jitpack.io"</span>]]
 
     }
 </code></pre>
 
-<p>Step 2<p>Add the dependency</p></p>
-<pre><code class="java">    :dependencies [[com.github.User/Repo &quot;Tag&quot;]]
+<p>Step 2</p><p>Add the dependency</p><p></p>
+<pre class="ltr ta-left code"><code class="java hljs">    :dependencies [[com.github.User/Repo <span class="hljs-string">"Tag"</span>]]
 
 </code></pre>
 
 <h2 id="usage_2">Usage</h2>
 <p>Well,You can see an example of sending SMS through JAVA below . </p>
-<pre><code class="java">
-try {
-     KavenegarApi  api= new KavenegarApi(&quot;&quot;);
-      SendResult Result = api.Send(&quot;SenderLine&quot;, &quot;Your Receptor&quot;, &quot;Kaveh specialized Web service &quot;);
+<pre class="ltr ta-left code"><code class="java hljs">
+<span class="hljs-keyword">try</span> {
+     KavenegarApi  api= <span class="hljs-keyword">new</span> KavenegarApi(<span class="hljs-string">""</span>);
+      SendResult Result = api.Send(<span class="hljs-string">"SenderLine"</span>, <span class="hljs-string">"Your Receptor"</span>, <span class="hljs-string">"Kaveh specialized Web service "</span>);
 }
-catch (HttpException ex)
-{//In case that error throw 200 
+<span class="hljs-keyword">catch</span> (HttpException ex)
+{<span class="hljs-comment">//In case that error throw 200 </span>
 
-  System.out.print(&quot;HttpException  : &quot; + ex.getMessage());
+  System.out.print(<span class="hljs-string">"HttpException  : "</span> + ex.getMessage());
 }
-catch (ApiException ex)
-{ //in case that there is any problem to connect to webservie  this error thow
+<span class="hljs-keyword">catch</span> (ApiException ex)
+{ <span class="hljs-comment">//in case that there is any problem to connect to webservie  this error thow</span>
 
-   System.out.print(&quot;ApiException : &quot; + ex.getMessage());
+   System.out.print(<span class="hljs-string">"ApiException : "</span> + ex.getMessage());
 }
 
 </code></pre>
 
-<hr />
+<hr>
 <h1 id="php">PHP</h1>
 <h2 id="installation_3">Installation</h2>
 <p>Use in these ways : </p>
-<pre><code class="php">composer require kavenegar/php
+<pre class="ltr ta-left code"><code class="php hljs">composer <span class="hljs-keyword">require</span> kavenegar/php
 </code></pre>
 
 <p>or add</p>
-<pre><code class="php">&quot;kavenegar/php&quot;: &quot;*&quot;
+<pre class="ltr ta-left code"><code class="php hljs"><span class="hljs-string">"kavenegar/php"</span>: <span class="hljs-string">"*"</span>
 </code></pre>
 
 <p>And run following command to download extension using <strong>composer</strong> </p>
-<pre><code class="php">$ composer update
+<pre class="ltr ta-left code"><code class="php hljs">$ composer update
 </code></pre>
 
 <h2 id="usage_3">Usage</h2>
 <p>Well, There is an example to Send SMS by PHP.</p>
-<pre><code class="php">require __DIR__ . '/vendor/autoload.php';
+<pre class="ltr ta-left code"><code class="php hljs"><span class="hljs-keyword">require</span> <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/vendor/autoload.php'</span>;
 
-try{
-    $api = new \Kavenegar\KavenegarApi({ &quot;{API Key}&quot; });
-    $sender = &quot;10004346&quot;;
-    $message = &quot;Kaveh specialized Web service  &quot;;
-    $receptor = array(&quot;{Your Phone Number}&quot;);
+<span class="hljs-keyword">try</span>{
+    $api = <span class="hljs-keyword">new</span> \Kavenegar\KavenegarApi({ <span class="hljs-string">"{API Key}"</span> });
+    $sender = <span class="hljs-string">"10004346"</span>;
+    $message = <span class="hljs-string">"Kaveh specialized Web service  "</span>;
+    $receptor = <span class="hljs-keyword">array</span>(<span class="hljs-string">"{Your Phone Number}"</span>);
     $result = $api-&gt;Send($sender,$receptor,$message);
-    if($result){
-        foreach($result as $r){
-            echo &quot;messageid = $r-&gt;messageid&quot;;
-            echo &quot;message = $r-&gt;message&quot;;
-            echo &quot;status = $r-&gt;status&quot;;
-            echo &quot;statustext = $r-&gt;statustext&quot;;
-            echo &quot;sender = $r-&gt;sender&quot;;
-            echo &quot;receptor = $r-&gt;receptor&quot;;
-            echo &quot;date = $r-&gt;date&quot;;
-            echo &quot;cost = $r-&gt;cost&quot;;
+    <span class="hljs-keyword">if</span>($result){
+        <span class="hljs-keyword">foreach</span>($result <span class="hljs-keyword">as</span> $r){
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"messageid = $r-&gt;messageid"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"message = $r-&gt;message"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"status = $r-&gt;status"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"statustext = $r-&gt;statustext"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"sender = $r-&gt;sender"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"receptor = $r-&gt;receptor"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"date = $r-&gt;date"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"cost = $r-&gt;cost"</span>;
         }       
     }
 }
-catch(\Kavenegar\Exceptions\ApiException $e){
-//In case that error throw 200 
-    echo $e-&gt;errorMessage();
+<span class="hljs-keyword">catch</span>(\Kavenegar\Exceptions\ApiException $e){
+<span class="hljs-comment">//In case that error throw 200 </span>
+    <span class="hljs-keyword">echo</span> $e-&gt;errorMessage();
 }
-catch(\Kavenegar\Exceptions\HttpException $e){
-//in case that there is any problem to connect to webservie  this error thow
-    echo $e-&gt;errorMessage();
+<span class="hljs-keyword">catch</span>(\Kavenegar\Exceptions\HttpException $e){
+<span class="hljs-comment">//in case that there is any problem to connect to webservie  this error thow</span>
+    <span class="hljs-keyword">echo</span> $e-&gt;errorMessage();
 }
 
 
 </code></pre>
 
-<hr />
+<hr>
 <h1 id="python">Python</h1>
 <h2 id="installation_4">Installation</h2>
 <h2 id="usage_4">Usage</h2>
 <p>Well, There is an example to Send SMS by Python below.</p>
-<pre><code class="python">#!/usr/bin/env python
-from kavenegar import *
-try:
-    import json
-except ImportError:
-    import simplejson as json
+<pre class="ltr ta-left code"><code class="python hljs"><span class="hljs-comment">#!/usr/bin/env python</span>
+<span class="hljs-keyword">from</span> kavenegar <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-keyword">import</span> json
+<span class="hljs-keyword">except</span> ImportError:
+    <span class="hljs-keyword">import</span> simplejson <span class="hljs-keyword">as</span> json
 
-try:
-    api = KavenegarAPI('{Your APIKey}')
+<span class="hljs-keyword">try</span>:
+    api = KavenegarAPI(<span class="hljs-string">'{Your APIKey}'</span>)
     params = {
-        'sender': '10004346',
-        'receptor': '{Your Phone Number}',
-        'message': 'Kaveh specialized Web service '
+        <span class="hljs-string">'sender'</span>: <span class="hljs-string">'10004346'</span>,
+        <span class="hljs-string">'receptor'</span>: <span class="hljs-string">'{Your Phone Number}'</span>,
+        <span class="hljs-string">'message'</span>: <span class="hljs-string">'Kaveh specialized Web service '</span>
     }   
     response = api.sms_send(params)
-    print str(response)
-except APIException,e: 
-    print str(e)
-except HTTPException,e: 
-    print str(e)
+    <span class="hljs-keyword">print</span> str(response)
+<span class="hljs-keyword">except</span> APIException,e: 
+    <span class="hljs-keyword">print</span> str(e)
+<span class="hljs-keyword">except</span> HTTPException,e: 
+    <span class="hljs-keyword">print</span> str(e)
 
 </code></pre>
 
-<hr />
-<h1 id="go">go <a href="https://travis-ci.org/negah/kavenegar"><img alt="Build Status" src="https://travis-ci.org/negah/kavenegar.svg?branch=master" /></a></h1>
+<hr>
+<h1 id="go">go <a href="https://travis-ci.org/negah/kavenegar"><img alt="Build Status" src="https://travis-ci.org/negah/kavenegar.svg?branch=master"></a></h1>
 <p>Install it  in this way </p>
-<pre><code class="shell">go get github.com/negah/kavenegar
+<pre class="ltr ta-left code"><code class="shell hljs dart">go <span class="hljs-keyword">get</span> github.com/negah/kavenegar
 </code></pre>
 
 <h2 id="usage_5">Usage</h2>
 <p>Well, There is an example to Send SMS by go below.</p>
-<pre><code class="go">package main
+<pre class="ltr ta-left code"><code class="go hljs"><span class="hljs-keyword">package</span> main
 
-import (
-  &quot;github.com/negah/kavenegar&quot;
-  &quot;log&quot;
-  &quot;fmt&quot;
+<span class="hljs-keyword">import</span> (
+  <span class="hljs-string">"github.com/negah/kavenegar"</span>
+  <span class="hljs-string">"log"</span>
+  <span class="hljs-string">"fmt"</span>
 )
 
-func main(){
-  // Setup new Client
-  // kavenegar.SMS(api_key, sender)
-  // sender is your dedicate phone_number in kavenagar. if you dont have one, left it blank but pass &quot;&quot;
-  sms := kavenegar.NewSMS(&quot;api_key&quot;,&quot;{Your APi Key}&quot;)
+<span class="hljs-keyword">func</span> main(){
+  <span class="hljs-comment">// Setup new Client</span>
+  <span class="hljs-comment">// kavenegar.SMS(api_key, sender)</span>
+  <span class="hljs-comment">// sender is your dedicate phone_number in kavenagar. if you dont have one, left it blank but pass ""</span>
+  sms := kavenegar.NewSMS(<span class="hljs-string">"api_key"</span>,<span class="hljs-string">"{Your APi Key}"</span>)
 
-  // Send sms
-  status, err := sms.Send(&quot;{Your Phone Number} &quot;, &quot;Hello my friend &quot;)
+  <span class="hljs-comment">// Send sms</span>
+  status, err := sms.Send(<span class="hljs-string">"{Your Phone Number} "</span>, <span class="hljs-string">"Hello my friend "</span>)
 
-  if err != nil {
-    log.Printf(&quot;Response status code: %d&quot;, status)
+  <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+    log.Printf(<span class="hljs-string">"Response status code: %d"</span>, status)
     log.Fatal(err)
-  } else {
-    fmt.Printf(&quot;SMS sent successfully.&quot;)
+  } <span class="hljs-keyword">else</span> {
+    fmt.Printf(<span class="hljs-string">"SMS sent successfully."</span>)
   }
 }
 
 </code></pre>
 
-<hr />
+<hr>
 <h1 id="ruby">Ruby</h1>
 <h2 id="installation_5">Installation</h2>
 <h2 id="usage_6">Usage</h2>
 <p>Add this line to your application's Gemfile:</p>
-<pre><code class="ruby">gem 'kave'
+<pre class="ltr ta-left code"><code class="ruby hljs">gem <span class="hljs-string">'kave'</span>
 </code></pre>
 
 <p>And then execute:</p>
-<pre><code class="bash">$ bundle install
+<pre class="ltr ta-left code"><code class="bash hljs">$ bundle install
 </code></pre>
 
 <p>Or install it yourself(localy) as:</p>
-<pre><code>$ gem install kave
+<pre class="ltr ta-left code"><code class="hljs ruby">$ gem install kave
 </code></pre>
 
 <p>And create init file on config directory(kave.rb):</p>
-<pre><code class="ruby">Kave.configure do |config|
-  config.wsdl ='http://api.kavenegar.com/soap/v1.asmx?WSDL'
-  config.sender  = 'number'
+<pre class="ltr ta-left code"><code class="ruby hljs">Kave.configure <span class="hljs-keyword">do</span> |config|
+  config.wsdl =<span class="hljs-string">'http://api.kavenegar.com/soap/v1.asmx?WSDL'</span>
+  config.sender  = <span class="hljs-string">'number'</span>
 </code></pre>
 
 <p>Well, There is an example to Send SMS by Ruby.</p>
-<pre><code class="Ruby"> request=Kave::SendRequestSimple.new({
+<pre class="ltr ta-left code"><code class="Ruby hljs"> request=<span class="hljs-symbol">Kave:</span><span class="hljs-symbol">:SendRequestSimple</span>.new({
 
-    message: 'سلام عزیز :)',
-    mobile: 'Your Phone Number ',
-    #optional
-    unixdate: by default 0 ,
-    msgmode: by default 1
+    <span class="hljs-symbol">message:</span> <span class="hljs-string">'سلام عزیز :)'</span>,
+    <span class="hljs-symbol">mobile:</span> <span class="hljs-string">'Your Phone Number '</span>,
+    <span class="hljs-comment">#optional</span>
+    <span class="hljs-symbol">unixdate:</span> by default <span class="hljs-number">0</span> ,
+    <span class="hljs-symbol">msgmode:</span> by default <span class="hljs-number">1</span>
 })
 
 res=request.call
-render :text=&gt;{status_message_only_farsi: res.statusmessage,status_code: res.status}
+render <span class="hljs-symbol">:text=&gt;</span>{<span class="hljs-symbol">status_message_only_farsi:</span> res.statusmessage,<span class="hljs-symbol">status_code:</span> res.status}
 </code></pre>
 
-<hr />
+<hr>
 <h1 id="elixir">Elixir</h1>
-<hr />
+<hr>
 <h2 id="installation_6">Installation</h2>
 <p>If <a href="https://hex.pm/docs/publish">available in Hex</a>, the package can be installed as:</p>
 <ol>
 <li>
 <p>Add kavenegar to your list of dependencies in <code>mix.exs</code>:</p>
-<pre><code>def deps do
-  [{:kavenegar, "~&gt; 0.0.1"}]
-end
+<pre class="ltr ta-left code"><code class="hljs ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deps</span> <span class="hljs-title">do</span></span>
+  [{<span class="hljs-symbol">:kavenegar</span>, <span class="hljs-string">"~&gt; 0.0.1"</span>}]
+<span class="hljs-keyword">end</span>
 </code></pre>
 </li>
 <li>
 <p>Ensure kavenegar is started before your application:</p>
-<pre><code>def application do
-  [applications: [:kavenegar]]
-end
+<pre class="ltr ta-left code"><code class="hljs ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">application</span> <span class="hljs-title">do</span></span>
+  [<span class="hljs-symbol">applications:</span> [<span class="hljs-symbol">:kavenegar</span>]]
+<span class="hljs-keyword">end</span>
 </code></pre>
 </li>
 </ol>
 <h2 id="usage_7">Usage</h2>
 <p>Well, There is an example to Send SMS by Elixir.</p>
-<pre><code class="php">Kavenegar.send %{receptor: '{Your Phone Number}', message: &quot;this is a sample text&quot;}
+<pre class="ltr ta-left code"><code class="php hljs">Kavenegar.send %{receptor: <span class="hljs-string">'{Your Phone Number}'</span>, message: <span class="hljs-string">"this is a sample text"</span>}
 </code></pre>
 
 <p>will return:</p>
-<pre><code class="php">%{&quot;entries&quot; =&gt; [%{&quot;cost&quot; =&gt; 130, &quot;date&quot; =&gt; 1466091791,
-     &quot;message&quot; =&gt; &quot;this is a sample text&quot;, &quot;messageid&quot; =&gt; 999999999,
-     &quot;receptor&quot; =&gt; &quot;{Your Phone Number}&quot;, &quot;sender&quot; =&gt; &quot;10001000010000&quot;, &quot;status&quot; =&gt; 1,
-     &quot;statustext&quot; =&gt; &quot;In sending list&quot;}],
-  &quot;return&quot; =&gt; %{&quot;message&quot; =&gt; &quot;Confirm&quot;, &quot;status&quot; =&gt; 200}}
+<pre class="ltr ta-left code"><code class="php hljs">%{<span class="hljs-string">"entries"</span> =&gt; [%{<span class="hljs-string">"cost"</span> =&gt; <span class="hljs-number">130</span>, <span class="hljs-string">"date"</span> =&gt; <span class="hljs-number">1466091791</span>,
+     <span class="hljs-string">"message"</span> =&gt; <span class="hljs-string">"this is a sample text"</span>, <span class="hljs-string">"messageid"</span> =&gt; <span class="hljs-number">999999999</span>,
+     <span class="hljs-string">"receptor"</span> =&gt; <span class="hljs-string">"{Your Phone Number}"</span>, <span class="hljs-string">"sender"</span> =&gt; <span class="hljs-string">"10001000010000"</span>, <span class="hljs-string">"status"</span> =&gt; <span class="hljs-number">1</span>,
+     <span class="hljs-string">"statustext"</span> =&gt; <span class="hljs-string">"In sending list"</span>}],
+  <span class="hljs-string">"return"</span> =&gt; %{<span class="hljs-string">"message"</span> =&gt; <span class="hljs-string">"Confirm"</span>, <span class="hljs-string">"status"</span> =&gt; <span class="hljs-number">200</span>}}
 </code></pre>
 
-<hr />
+<hr>
 <h1 id="laravel">Laravel</h1>
-<hr />
+<hr>
 <h2 id="requirements">Requirements</h2>
 <p>Laravel 4 or 5.</p>
 <h2 id="installation_7">Installation</h2>
 <p>Install it this way : </p>
-<pre><code class="sh">composer require kavenegar/laravel
+<pre class="ltr ta-left code"><code class="sh hljs bash">composer require kavenegar/laravel
 </code></pre>
 
 <h2 id="laravel-5">Laravel 5</h2>
 <p>Add the <code>Kavenegar\Laravel\ServiceProvider</code> provider to the <code>providers</code> array in <code>config/app.php</code>:</p>
-<pre><code class="php">'providers' =&gt; [
+<pre class="ltr ta-left code"><code class="php hljs"><span class="hljs-string">'providers'</span> =&gt; [
   ...
   Kavenegar\Laravel\ServiceProvider::class,
 ],
 </code></pre>
 
 <p>Then add the facade to your <code>aliases</code> array:</p>
-<pre><code class="php">'aliases' =&gt; [
+<pre class="ltr ta-left code"><code class="php hljs"><span class="hljs-string">'aliases'</span> =&gt; [
   ...
-  'Kavenegar' =&gt; Kavenegar\Laravel\Facade::class,
+  <span class="hljs-string">'Kavenegar'</span> =&gt; Kavenegar\Laravel\Facade::class,
 ],
 </code></pre>
 
 <p>Finally, publish the config file with <code>php artisan vendor:publish</code>. You'll find it at <code>config/kavenegar.php</code>.</p>
 <h2 id="laravel-4">Laravel 4</h2>
 <p>Add the <code>Kavenegar\Laravel\ServiceProvider</code> provider to the <code>providers</code> array in <code>app/config.php</code>:</p>
-<pre><code class="php">'providers' =&gt; [
+<pre class="ltr ta-left code"><code class="php hljs"><span class="hljs-string">'providers'</span> =&gt; [
   ...
-  'Kavenegar\Laravel\ServiceProvider',
+  <span class="hljs-string">'Kavenegar\Laravel\ServiceProvider'</span>,
 ],
 </code></pre>
 
 <p>Then add the facade to your <code>aliases</code> array:</p>
-<pre><code class="php">'aliases' =&gt; [
+<pre class="ltr ta-left code"><code class="php hljs"><span class="hljs-string">'aliases'</span> =&gt; [
   ...
-  'Kavenegar' =&gt; Kavenegar\Laravel\Facade',
+  <span class="hljs-string">'Kavenegar'</span> =&gt; Kavenegar\Laravel\Facade<span class="hljs-string">',
 ],
-</code></pre>
+</span></code></pre>
 
 <p>Finally, publish the config file with <code>php artisan config:publish kavenegar/laravel</code>. You'll find the config file at <code>app/config/packages/kavenegar/laravel/config.php</code>.</p>
 <h2 id="usage_8">Usage</h2>
 <p>Well, There is an example to Send SMS by Laravel below.</p>
-<pre><code class="php">
-use Kavenegar as api;
-try{
-    $sender = &quot;10004346&quot;;
-    $message = &quot;Kaveh specialized Web service &quot;;
-    $receptor = array(&quot;{Your Phone Number}&quot;);
+<pre class="ltr ta-left code"><code class="php hljs">
+<span class="hljs-keyword">use</span> <span class="hljs-title">Kavenegar</span> <span class="hljs-title">as</span> <span class="hljs-title">api</span>;
+<span class="hljs-keyword">try</span>{
+    $sender = <span class="hljs-string">"10004346"</span>;
+    $message = <span class="hljs-string">"Kaveh specialized Web service "</span>;
+    $receptor = <span class="hljs-keyword">array</span>(<span class="hljs-string">"{Your Phone Number}"</span>);
     $result = api-&gt;Send($sender,$receptor,$message);
-    if($result){
-        foreach($result as $r){
-            echo &quot;messageid = $r-&gt;messageid&quot;;
-            echo &quot;message = $r-&gt;message&quot;;
-            echo &quot;status = $r-&gt;status&quot;;
-            echo &quot;statustext = $r-&gt;statustext&quot;;
-            echo &quot;sender = $r-&gt;sender&quot;;
-            echo &quot;receptor = $r-&gt;receptor&quot;;
-            echo &quot;date = $r-&gt;date&quot;;
-            echo &quot;cost = $r-&gt;cost&quot;;
+    <span class="hljs-keyword">if</span>($result){
+        <span class="hljs-keyword">foreach</span>($result <span class="hljs-keyword">as</span> $r){
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"messageid = $r-&gt;messageid"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"message = $r-&gt;message"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"status = $r-&gt;status"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"statustext = $r-&gt;statustext"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"sender = $r-&gt;sender"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"receptor = $r-&gt;receptor"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"date = $r-&gt;date"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"cost = $r-&gt;cost"</span>;
         }       
     }
 }
-catch(\Kavenegar\Exceptions\ApiException $e){
-    //In case that error throw 200 
-    echo $e-&gt;errorMessage();
+<span class="hljs-keyword">catch</span>(\Kavenegar\Exceptions\ApiException $e){
+    <span class="hljs-comment">//In case that error throw 200 </span>
+    <span class="hljs-keyword">echo</span> $e-&gt;errorMessage();
 }
-catch(\Kavenegar\Exceptions\HttpException $e){
-//in case that there is any problem to connect to webservie  this error thow
-    echo $e-&gt;errorMessage();
+<span class="hljs-keyword">catch</span>(\Kavenegar\Exceptions\HttpException $e){
+<span class="hljs-comment">//in case that there is any problem to connect to webservie  this error thow</span>
+    <span class="hljs-keyword">echo</span> $e-&gt;errorMessage();
 }
 
 </code></pre>
@@ -902,24 +902,24 @@ catch(\Kavenegar\Exceptions\HttpException $e){
 <h1 id="yii2">yii2</h1>
 <h2 id="installation_8">Installation</h2>
 <p>Install it these ways : </p>
-<pre><code class="php">composer require kavenegar/yii2
+<pre class="ltr ta-left code"><code class="php hljs">composer <span class="hljs-keyword">require</span> kavenegar/yii2
 </code></pre>
 
 <p>or add</p>
-<pre><code class="php">&quot;kavenegar/yii2&quot;: &quot;*&quot;
+<pre class="ltr ta-left code"><code class="php hljs"><span class="hljs-string">"kavenegar/yii2"</span>: <span class="hljs-string">"*"</span>
 </code></pre>
 
 <p>And run following command to download extension using <code>**composer**</code>:</p>
-<pre><code class="php">$ composer update
+<pre class="ltr ta-left code"><code class="php hljs">$ composer update
 </code></pre>
 
 <h2 id="configuration">Configuration</h2>
 <p>Add the following in your config:</p>
-<pre><code class="php">return [
-    'components' =&gt; [
-        'Kavenegar' =&gt; [
-            'class' =&gt; 'Kavenegar\Yii2\Kavenegar',
-            'apikey' =&gt; '{Your API Key}',
+<pre class="ltr ta-left code"><code class="php hljs"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'Kavenegar'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'Kavenegar\Yii2\Kavenegar'</span>,
+            <span class="hljs-string">'apikey'</span> =&gt; <span class="hljs-string">'{Your API Key}'</span>,
         ],
     ],
 ];
@@ -927,32 +927,32 @@ catch(\Kavenegar\Exceptions\HttpException $e){
 
 <h2 id="usage_9">Usage</h2>
 <p>Well, There is an example to Send SMS by yii2 below.</p>
-<pre><code class="php">try{
+<pre class="ltr ta-left code"><code class="php hljs"><span class="hljs-keyword">try</span>{
     $api = Yii::$app-&gt;Kavenegar-&gt;KavenegarApi();
-    $sender = &quot;10004346&quot;;
-    $message = &quot;Kaveh specialized Web service &quot;;
-    $receptor = array(&quot;{Your Phone Number} &quot;);
+    $sender = <span class="hljs-string">"10004346"</span>;
+    $message = <span class="hljs-string">"Kaveh specialized Web service "</span>;
+    $receptor = <span class="hljs-keyword">array</span>(<span class="hljs-string">"{Your Phone Number} "</span>);
     $result = $api-&gt;Send($sender,$receptor,$message);
-    if($result){
-        foreach($result as $r){
-            echo &quot;messageid = $r-&gt;messageid&quot;;
-            echo &quot;message = $r-&gt;message&quot;;
-            echo &quot;status = $r-&gt;status&quot;;
-            echo &quot;statustext = $r-&gt;statustext&quot;;
-            echo &quot;sender = $r-&gt;sender&quot;;
-            echo &quot;receptor = $r-&gt;receptor&quot;;
-            echo &quot;date = $r-&gt;date&quot;;
-            echo &quot;cost = $r-&gt;cost&quot;;
+    <span class="hljs-keyword">if</span>($result){
+        <span class="hljs-keyword">foreach</span>($result <span class="hljs-keyword">as</span> $r){
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"messageid = $r-&gt;messageid"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"message = $r-&gt;message"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"status = $r-&gt;status"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"statustext = $r-&gt;statustext"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"sender = $r-&gt;sender"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"receptor = $r-&gt;receptor"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"date = $r-&gt;date"</span>;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">"cost = $r-&gt;cost"</span>;
         }       
     }
 }
-catch(\Kavenegar\Exceptions\ApiException $e){
-//In case that error throw 200 
-    echo $e-&gt;errorMessage();
+<span class="hljs-keyword">catch</span>(\Kavenegar\Exceptions\ApiException $e){
+<span class="hljs-comment">//In case that error throw 200 </span>
+    <span class="hljs-keyword">echo</span> $e-&gt;errorMessage();
 }
-catch(\Kavenegar\Exceptions\HttpException $e){
-//in case that there is any problem to connect to webservie  this error thow
-    echo $e-&gt;errorMessage();
+<span class="hljs-keyword">catch</span>(\Kavenegar\Exceptions\HttpException $e){
+<span class="hljs-comment">//in case that there is any problem to connect to webservie  this error thow</span>
+    <span class="hljs-keyword">echo</span> $e-&gt;errorMessage();
 }
 
 
@@ -970,13 +970,13 @@ catch(\Kavenegar\Exceptions\HttpException $e){
 				
 				
 				
-					<a class="left" href="https://github.com/kavenegar/mkdocs-jinks">Fork on Github</a>
+					<a class="left" href="https://github.com/kavenegar/kavenegar_en">Fork on Github</a>
 					
 				
 				
 			
 			
-			<a class="right" href="http://www.mkdocs.org">Built with: MkDocs.</a>
+			<a class="right" href="http://kavenegar.com">Built with: kavenegar</a>
 
 		</footer>
 	
@@ -997,6 +997,7 @@ catch(\Kavenegar\Exceptions\HttpException $e){
 		http://www.mkdocs.org/user-guide/configuration/#extra_javascript
 	-->
 	
+
 
 </body>
 </html>
